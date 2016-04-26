@@ -14,8 +14,8 @@ app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 
 app.use(function(req, res, next){
-  res.locals.showTests = app.get('env') !== 'production'
-    && req.query.test === '1';
+  res.locals.showTests = app.get('env') !== 'production' &&
+   req.query.test === '1';
   next();
 });
 app.get('/', function(req, res) {
